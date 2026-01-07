@@ -1,14 +1,14 @@
 // Add your dependencies here
 
 dependencies {
-    implementation("com.github.GTNewHorizons:CodeChickenCore:1.4.7:dev")
-    implementation("com.github.GTNewHorizons:NotEnoughItems:2.8.35-GTNH:dev")
-    implementation("com.github.GTNewHorizons:ForgeMultipart:1.7.0:dev")
+    implementation("com.github.GTNewHorizons:CodeChickenCore:1.4.10:dev")
+    implementation("com.github.GTNewHorizons:NotEnoughItems:2.8.48-GTNH:dev")
+    implementation("com.github.GTNewHorizons:ForgeMultipart:1.7.2:dev")
 
     compileOnly("org.projectlombok:lombok:1.18.24")
     annotationProcessor("org.projectlombok:lombok:1.18.24")
 
-    devOnlyNonPublishable("com.github.GTNewHorizons:waila:1.9.7:dev") {
+    devOnlyNonPublishable("com.github.GTNewHorizons:waila:1.9.15:dev") {
         transitive = false
     }
     devOnlyNonPublishable("com.github.GTNewHorizons:WailaHarvestability:1.3.4-GTNH:dev")
@@ -17,7 +17,7 @@ dependencies {
         transitive = false
     }
 
-    compileOnly("com.github.GTNewHorizons:Angelica:1.0.0-beta68:api") {
+    compileOnly("com.github.GTNewHorizons:Angelica:1.0.0-beta68a:api") {
         transitive = false
     }
 }
