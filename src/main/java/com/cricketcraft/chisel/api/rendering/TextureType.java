@@ -6,6 +6,7 @@ import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderBlocks;
 import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.launchwrapper.Launch;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.IBlockAccess;
@@ -271,6 +272,8 @@ public enum TextureType {
 	CUSTOM;
 
 	/* Some util stuff for shared code between v* and r* */
+    public static final boolean fixedBottomFaceUV = (boolean) Launch.blackboard
+        .getOrDefault("hodgepodge.FixesConfig.fixBottomFaceUV", Boolean.FALSE);
 
 	public static IIcon getVIcon(TextureType type, TextureSubmap map, int x, int y, int z, int side) {
 		int variationSize = (type == TextureType.V9) ? 3 : 2;
@@ -291,6 +294,9 @@ public enum TextureType {
         //For DOWN, reverse the indexes for only Z
         textureZ = (variationSize - textureZ - 1);
     	}*/
+        else if (side == 0 && fixedBottomFaceUV) {
+            textureX = variationSize - textureX - 1;
+        }
 
 		int index;
 		if (side == 0 || side == 1) {
